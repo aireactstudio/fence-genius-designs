@@ -1,6 +1,7 @@
 
 import React from 'react';
 import FeatureCard from './FeatureCard';
+import { IMAGES } from '@/utils/images';
 
 const Services: React.FC = () => {
   const services = [
@@ -43,8 +44,12 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="section bg-muted">
-      <div className="container mx-auto">
+    <section id="services" className="section bg-muted relative">
+      <div 
+        className="absolute inset-0 opacity-10 bg-cover bg-center"
+        style={{ backgroundImage: `url(${IMAGES.RAIL_FENCE})` }}
+      ></div>
+      <div className="container mx-auto relative">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h5 className="text-tech-dark font-medium mb-2">Our Expertise</h5>
           <h2 className="mb-4">Premium Fencing Services</h2>
@@ -61,7 +66,7 @@ const Services: React.FC = () => {
               icon={service.icon}
               title={service.title}
               description={service.description}
-              className="animate-fade-in"
+              className="bg-white/95"
               style={{ animationDelay: `${index * 100}ms` }}
             />
           ))}

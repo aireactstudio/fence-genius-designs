@@ -1,11 +1,17 @@
 
 import React from 'react';
 import Button from './Button';
+import { IMAGES } from '@/utils/images';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-accent to-white bg-wood-texture">
-      <div className="absolute inset-0 bg-black/5"></div>
+    <section className="relative min-h-screen flex items-center">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${IMAGES.HOME_FENCE_1})` }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
       <div className="container mx-auto relative z-10">
         <div className="max-w-3xl mx-auto md:mx-0">
           <h5 className="text-tech-dark font-medium mb-2 md:mb-4">Seattle's Most Innovative</h5>

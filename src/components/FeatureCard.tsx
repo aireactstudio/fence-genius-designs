@@ -7,6 +7,7 @@ interface FeatureCardProps {
   title: string;
   description: string;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -14,12 +15,16 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   title,
   description,
   className,
+  style,
 }) => {
   return (
-    <div className={cn(
-      "bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-border flex flex-col items-center text-center animate-fade-in",
-      className
-    )}>
+    <div 
+      className={cn(
+        "bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-border flex flex-col items-center text-center animate-fade-in",
+        className
+      )}
+      style={style}
+    >
       <div className="mb-4 text-tech-dark text-4xl">{icon}</div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
